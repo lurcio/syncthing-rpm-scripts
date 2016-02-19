@@ -126,4 +126,4 @@ make_rpm_environment
 make_tarball
 copy_tarball
 build_rpm
-#cleanup
+cleanup
