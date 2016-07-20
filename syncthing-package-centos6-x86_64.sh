@@ -27,7 +27,7 @@ make_rpm_environment()
 	Group: System Environment/Daemons
 	SOURCE0 : %{name}-%{version}.tar.gz
 	URL: http://syncthing.net
-	
+
 	BuildRoot: $DIR/rpmbuild/tmp/%{name}-%{version}-%{release}-root
 
 	%description
@@ -76,9 +76,9 @@ create_init_script()
 	#
 	# chkconfig: 345 70 30
 	# description: Syncthing synchronises files between servers
-	
+
 	PROG="/usr/bin/syncthing"
-	
+
 	# Source config
 	if [ -f /etc/sysconfig/syncthing ] ; then
 	  . /etc/sysconfig/syncthing
@@ -123,7 +123,7 @@ create_init_script()
 	    exit
 	  fi
 	}
-	
+
 	case "$1" in
 	  start) start
 	    ;;
@@ -137,7 +137,7 @@ create_init_script()
 	     exit 1
 	   ;;
 	esac
-	
+
 	exit 0
 EOF
 }
@@ -157,7 +157,7 @@ make_tarball()
 
   if [ ! -f syncthing-linux-amd64-$VERSION.tar.gz ]
   then
-    wget https://github.com/syncthing/syncthing/releases/download/$VERSION/syncthing-linux-amd64-$VERSION.tar.gz
+    wget http://archive.syncthing.net/$VERSION/syncthing-linux-amd64-$VERSION.tar.gz
   fi
 
   tar xzvf syncthing-linux-amd64-$VERSION.tar.gz

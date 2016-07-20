@@ -28,7 +28,7 @@ make_rpm_environment()
 	Requires: httpd
 	SOURCE0 : %{name}-%{version}.tar.gz
 	URL: http://syncthing.net
-	
+
 	BuildRoot: $DIR/rpmbuild/tmp/%{name}-%{version}-%{release}-root
 
 	%description
@@ -86,7 +86,7 @@ make_tarball()
 
   if [ ! -f syncthing-linux-amd64-$VERSION.tar.gz ]
   then
-    wget https://github.com/syncthing/syncthing/releases/download/$VERSION/syncthing-linux-amd64-$VERSION.tar.gz
+    wget http://archive.syncthing.net/$VERSION/syncthing-linux-amd64-$VERSION.tar.gz
   fi
 
   tar xzvf syncthing-linux-amd64-$VERSION.tar.gz
